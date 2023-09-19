@@ -22,7 +22,7 @@ class MainViewModel: ViewModel() {
     val stateFlow: StateFlow<String> = _stateFlow
 
     private val _sharedFlow = MutableSharedFlow<String>()
-    val sharedFlow = _sharedFlow.asSharedFlow()  //как обычный флоу не держит в себе значение, больше для отправки one-time events
+    val sharedFlow = _sharedFlow.asSharedFlow()
 
     fun triggerLiveData() {
         _liveData.value = "LiveData"

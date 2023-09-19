@@ -46,6 +46,8 @@ class MainActivity : AppCompatActivity() {
                 Log.d("LoGG", "StateFlow triggered!")
                 viewBinding.stateFlowTextView.text = it
             }
+        }
+        lifecycleScope.launchWhenStarted {
             viewModel.sharedFlow.collectLatest {
                 Log.d("LoGG", "SharedFlow triggered!")
                 viewBinding.stateFlowTextView.text = it
